@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'futura-PT', sans-serif;
+  --font-headers: 'reross-quadratic', sans-serif;
+
+  --color-orange: #ff3900;
+  --color-white: #fff;
+  --color-light-gray: #efefef;
+  --color-gray: #9d9d9d;
+  --color-dark-gray: #414141;
+  --color-black: #000;
+
+  --font-weight-demi: 600;
+  --font-weight-medium: 500;
+
+  --text-headline: 70px;
+  --text-headline-small: 50px;
+  --text-subheadline: 34px;
+  --text-text-lg: 18px;
+  --text-text-md: 16px;
+  --text-text-sm: 14px;
+}
