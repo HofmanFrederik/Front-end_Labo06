@@ -1,27 +1,29 @@
 'use client'
 
+import TypoHeader from '../components/typo/TypoHeader'
+
 export default function fontsAndColors() {
   return (
     <div className="fonts-and-colors flex h-screen overflow-hidden">
       <div className="left bg-light-gray relative h-full w-1/2 shrink-0 px-16">
         <div className="headers absolute top-1/2 flex -translate-y-1/2 flex-col gap-12">
-          <h1 className="font-headers text-headline leading-[0.95] text-black">
+          <TypoHeader element="h1" level="headline">
             Reross | 70
             <br />
             Headline
-          </h1>
+          </TypoHeader>
 
-          <h2 className="font-headers text-headline-small text-orange leading-[0.95]">
+          <TypoHeader element="h2" level="headline-small">
             Reross | 50
             <br />
             Headline Small
-          </h2>
+          </TypoHeader>
 
-          <h3 className="font-headers text-subheadline leading-[1] text-black">
+          <TypoHeader element="h3" level="subheadline">
             Reross | 34
             <br />
             Subheadline
-          </h3>
+          </TypoHeader>
         </div>
 
         <div className="colors absolute right-0 bottom-0 left-0 flex h-8">
