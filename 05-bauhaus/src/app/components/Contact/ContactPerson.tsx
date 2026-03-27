@@ -18,22 +18,24 @@ export default function ContactPerson({
 }) {
   return (
     <div
-      className={`align-center flex w-full max-w-[663px] items-center justify-between ${className}`}
+      className={`flex w-full max-w-[663px] flex-col items-start justify-between gap-6 sm:flex-row sm:items-center sm:gap-4 ${className}`}
     >
-      <div className="flex">
+      <div className="flex items-center">
         <Img
           src={imageSrc}
-          alt="Contact Person"
+          alt={`Profile picture of ${name}`}
           width={69}
           height={69}
-          className="me-4 rounded-full"
+          className="me-4 h-[69px] w-[69px] shrink-0 rounded-full object-cover"
         />
         <div>
-          <p className="text-text-sm font-sans font-medium">Written by</p>
-          <p className="text-text-sm text-orange font-bold">
+          <p className="font-sans text-sm font-medium text-gray-500">
+            Written by
+          </p>
+          <p className="text-orange text-base font-bold">
             {name}, {role}
           </p>
-          <p className="text-text-sm font-sans font-medium text-black">
+          <p className="font-sans text-sm font-medium break-all text-black sm:break-normal">
             {tag} | {email}
           </p>
         </div>
@@ -41,7 +43,7 @@ export default function ContactPerson({
       <ButtonMain
         type="default-outline"
         element="button"
-        className="h-[45px] px-0! py-0!"
+        className="h-[45px] w-full shrink-0 px-6 py-0 sm:w-auto"
       >
         Send Mail
       </ButtonMain>

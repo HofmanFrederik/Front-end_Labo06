@@ -13,16 +13,22 @@ export default function ContactInfo({
   title?: string
 }) {
   return (
-    <div className="w-full max-w-[321px]">
+    <div className="w-full sm:max-w-[321px]">
       <TypoHeader
         element="h2"
         level="subheadline"
-        className={`w-full text-black ${className}`}
+        className={`mb-4 w-full text-black ${className}`}
       >
         {title}
       </TypoHeader>
-      {children}
-      <ButtonMain element="button" type="default-outline" className="mt-6">
+
+      <div className="text-gray-700">{children}</div>
+
+      <ButtonMain
+        element="button"
+        type="default-outline"
+        className="mt-8 w-full sm:w-auto"
+      >
         {buttonText || 'Get in touch'}
       </ButtonMain>
     </div>
