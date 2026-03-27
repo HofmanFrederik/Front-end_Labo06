@@ -4,10 +4,12 @@ export default function TypoHeader({
   element = 'h1',
   level = 'headline',
   children,
+  className = '',
 }: {
   element?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
   level?: 'headline' | 'headline-small' | 'subheadline'
   children: JSX.Element | string
+  className?: string
 }) {
   const Element = element
 
@@ -24,5 +26,7 @@ export default function TypoHeader({
     }
   }
 
-  return <Element className={getClassName()}>{children}</Element>
+  return (
+    <Element className={`${getClassName()} ${className}`}>{children}</Element>
+  )
 }

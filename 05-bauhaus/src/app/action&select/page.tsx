@@ -57,7 +57,6 @@ export default function actionAndSelect() {
 
       <ButtonPlay element="button" type="play" variant="solid" />
 
-      <MenuHamburger />
 
       <SingleSelect
         options={[

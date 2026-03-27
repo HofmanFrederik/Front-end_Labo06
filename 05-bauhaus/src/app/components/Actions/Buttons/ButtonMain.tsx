@@ -6,12 +6,14 @@ export default function ButtonMain({
   href,
   icon,
   children,
+  className = '',
 }: {
   element?: 'Button' | 'button' | 'a'
   type?: 'default-outline' | 'icon-outline' | 'default-solid' | 'icon-solid'
   href?: string
   icon?: ReactNode
   children: ReactNode
+  className?: string
 }) {
   const Element = element === 'Button' ? 'button' : element
 
@@ -41,11 +43,11 @@ export default function ButtonMain({
 
   if (Element === 'a') {
     return (
-      <a href={href ?? '#'} className={getClassName()}>
+      <a href={href ?? '#'} className={getClassName() + ' ' + className}>
         {content}
       </a>
     )
   }
 
-  return <button className={getClassName()}>{content}</button>
+  return <button className={getClassName() + ' ' + className}>{content}</button>
 }

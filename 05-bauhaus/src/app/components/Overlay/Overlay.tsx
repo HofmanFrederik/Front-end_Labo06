@@ -1,49 +1,28 @@
-'use client'
-
-import { ReactNode } from 'react'
+import { X } from 'lucide-react'
+import { JSX } from 'react'
 
 export default function Overlay({
-  backgroundColor = 'black',
   children,
   onClose,
+  style = 'light',
+  className,
 }: {
-  backgroundColor?: 'black' | 'red'
-  children: ReactNode
-  onClose?: () => void
+  children: JSX.Element | JSX.Element[]
+  onClose: () => void
+  style: 'dark' | 'light'
+  className?: string
 }) {
-  const getBackgroundClassName = () => {
-    switch (backgroundColor) {
-      case 'red':
-        return 'bg-red text-white'
-      case 'black':
-      default:
-        return 'bg-black text-white'
-    }
-  }
+  const getStyle = style === 'dark' ? 'bg-gray-900' : 'bg-orange'
 
   return (
-    <aside
-      className={`absolute top-0 left-0 ms-23 flex h-screen w-full max-w-[456px] flex-col px-12 py-10 ${getBackgroundClassName()}`}
+    <div
+      className={`fixed inset-0 z-10 flex max-w-114 px-6 pt-6 pb-24 text-white ${className} ${getStyle}`}
     >
-      <button
-        type="button"
-        onClick={onClose}
-        aria-label="Close overlay"
-        className="ml-auto cursor-pointer"
-      >
-        <svg
-          width="36"
-          height="36"
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path d="M5 5L19 19" stroke="currentColor" strokeWidth="1.5" />
-          <path d="M19 5L5 19" stroke="currentColor" strokeWidth="1.5" />
-        </svg>
+      <button onClick={onClose} className="absolute top-12 right-12">
+        <X className="size-8" />
       </button>
 
-      <div className="mt-auto">{children}</div>
-    </aside>
+      <div className="mt-auto space-y-6">{children}</div>
+    </div>
   )
 }

@@ -19,12 +19,13 @@ export default function TextArea({
   placeholder,
   rows = 5,
   errorMessage,
+  className = '',
   ...props
 }: FormTextAreaProps) {
   const textAreaId = id ?? name ?? label.toLowerCase().replace(/\s+/g, '-')
   const isInvalid = state === 'invalid'
 
-  const textAreaClassName = `bg-light-gray text-text-md w-full px-4 py-3 font-sans font-medium border resize-none ${
+  const textAreaClassName = `bg-light-gray text-text-md w-full px-4 py-3 font-sans font-medium border resize-none ${className} ${
     isInvalid
       ? 'border-l-4 border-l-red-600 border-t-light-gray border-r-light-gray border-b-light-gray'
       : 'border-light-gray'

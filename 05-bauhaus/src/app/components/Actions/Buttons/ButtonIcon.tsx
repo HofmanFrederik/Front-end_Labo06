@@ -5,11 +5,13 @@ export default function ButtonIcon({
   type = 'outline',
   href,
   icon,
+  className = '',
 }: {
   element?: 'Button' | 'button' | 'a'
   type?: 'outline' | 'solid'
   href?: string
   icon: ReactNode
+  className?: string
 }) {
   const Element = element === 'Button' ? 'button' : element
 
@@ -29,11 +31,11 @@ export default function ButtonIcon({
 
   if (Element === 'a') {
     return (
-      <a href={href ?? '#'} className={getClassName()}>
+      <a href={href ?? '#'} className={getClassName() + ' ' + className}>
         <span aria-hidden="true">{icon}</span>
       </a>
     )
   }
 
-  return <button className={getClassName()}>{icon}</button>
+  return <button className={getClassName() + ' ' + className}>{icon}</button>
 }

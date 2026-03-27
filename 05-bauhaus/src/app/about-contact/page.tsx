@@ -5,6 +5,7 @@ import TypoHeader from '../components/typo/TypoHeader'
 
 export default function AboutContact() {
   const [screenWidth, setScreenWidth] = useState(0)
+  const [showOverlay, setShowOverlay] = useState(false)
 
   useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect

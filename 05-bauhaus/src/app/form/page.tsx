@@ -29,7 +29,7 @@ export default function FormPage() {
         placeholder="Enter your message"
       />
 
-      <Overlay backgroundColor="red">
+      <Overlay onClose={() => {}} style="dark">
         <p>This is the content of the overlay.</p>
       </Overlay>
     </div>
